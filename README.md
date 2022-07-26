@@ -1,3 +1,10 @@
+# 分工
+### 菜单 ：吴鸿辉
+### 订单 ：何忠生
+### 评论 ：欧安怡
+### 购物车 ：严纪远
+### 用户信息 ：吕翔
+
 # 简介
 
 后台界面在线演示地址：[http://www.macrozheng.com/admin/](http://www.macrozheng.com/admin/)
