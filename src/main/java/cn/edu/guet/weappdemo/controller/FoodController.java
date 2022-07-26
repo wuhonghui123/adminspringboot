@@ -1,6 +1,9 @@
 package cn.edu.guet.weappdemo.controller;
 
 import cn.edu.guet.weappdemo.http.HttpResult;
+import cn.edu.guet.weappdemo.service.FoodService;
+import cn.edu.guet.weappdemo.service.SysRoleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -9,11 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @Date: 2022/07/25/18:59
  */
 public class FoodController {
+    @Autowired
+    private FoodService foodService;
     @GetMapping("/food/list")//获取食物列表
     public HttpResult getFoodList(){
-        return HttpResult.ok();
+        return HttpResult.ok(foodService.GetFoodList());
     }
-
     @GetMapping("/food/classification_list")//获取食物分类列表
     public HttpResult getClassificationList(){
         return HttpResult.ok();
