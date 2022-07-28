@@ -1,16 +1,15 @@
-package cn.edu.guet.weappdemo.mapper;
+package cn.edu.guet.weappdemo.service;
 
 import cn.edu.guet.weappdemo.bean.Food;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * @Author: wuhonghui
- * @Date: 2022/07/26/20:16
+ * @Date: 2022/07/28/20:54
  */
-@Mapper
-public interface FoodMapper {
+
+public interface FoodService {
     List<Food> getFoodList();
     int addFood(Food food);
     int deleFood(String id);
