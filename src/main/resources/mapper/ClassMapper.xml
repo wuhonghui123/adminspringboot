@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.ClassMapper">
-    <insert id="addClass"></insert>
-    <update id="updateFood"></update>
-    <delete id="deleFood"></delete>
-    <select id="getClassList" resultType="cn.edu.guet.weappdemo.bean.Food"></select>
+    <insert id="addClass" parameterType="cn.edu.guet.weappdemo.bean.Classification">
+        INSERT INTO classification (id, name, icon)
+        VALUES (#{id},#{name},#{icon});
+    </insert>
+    <update id="updateFood" parameterType="cn.edu.guet.weappdemo.bean.Classification">
+        UPDATE classification
+        SET name= #{name},icon = #{icon}
+        WHERE id = #{id}
+    </update>
+    <delete id="deleFood">
+        DELETE FROM classification WHERE id = #{value}
+    </delete>
+    <select id="getClassList" resultType="cn.edu.guet.weappdemo.bean.Food">
+        SELECT * FROM classification
+    </select>
 </mapper>
