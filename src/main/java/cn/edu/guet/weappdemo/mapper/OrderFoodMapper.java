@@ -1,6 +1,9 @@
 package cn.edu.guet.weappdemo.mapper;
 
+import cn.edu.guet.weappdemo.bean.OrderFood;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Author: wuhonghui
@@ -8,4 +11,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface OrderFoodMapper {
+    List<OrderFood> searchOrder(String order_id);
 }
