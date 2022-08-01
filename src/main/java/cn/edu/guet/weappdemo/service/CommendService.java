@@ -1,16 +1,11 @@
-package cn.edu.guet.weappdemo.mapper;
+package cn.edu.guet.weappdemo.service;
+
 
 import cn.edu.guet.weappdemo.bean.Commend;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/**
- * @Author: wuhonghui
- * @Date: 2022/07/26/20:18
- */
-@Mapper
-public interface CommendMapper {
+public interface CommendService {
     List<Commend> getCommend();
     int updateCommend(Commend commend);
     int deleteCommend(String id);
