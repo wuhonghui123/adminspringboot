@@ -10,7 +10,7 @@ import java.util.List;
  * @Date: 2022/07/28/20:55
  */
 public interface ClassService {
-    List<Food> getClassList();
+    List<Classification> getClassList();
     int addClass(Classification classification);
     int deleFood(String id);
     int updateFood(Classification classification);

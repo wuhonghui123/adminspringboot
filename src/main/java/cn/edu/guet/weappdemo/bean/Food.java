@@ -29,30 +29,6 @@ public class Food {
         this.price = price;
     }
 
-    public int getPublish_status() {
-        return publish_status;
-    }
-
-    public void setPublish_status(int publish_status) {
-        this.publish_status = publish_status;
-    }
-
-    public int getRecommend_status() {
-        return recommend_status;
-    }
-
-    public void setRecommend_status(int recommend_status) {
-        this.recommend_status = recommend_status;
-    }
-
-    public int getNew_status() {
-        return new_status;
-    }
-
-    public void setNew_status(int new_status) {
-        this.new_status = new_status;
-    }
-
     public int getSale() {
         return sale;
     }
@@ -101,26 +77,72 @@ public class Food {
         this.desc = desc;
     }
 
-    public String getFood_class() {
-        return food_class;
-    }
-
-    public void setFood_class(String food_class) {
-        this.food_class = food_class;
-    }
-
     private String id;
     private String name;
     private double price;
-    private int publish_status;
-    private int recommend_status;
-    private int new_status;
+
+    public String getPublish_status() {
+        return publish_status;
+    }
+
+    public void setPublish_status(String publish_status) {
+        this.publish_status = publish_status;
+    }
+
+    public String getRecommend_status() {
+        return recommend_status;
+    }
+
+    public void setRecommend_status(String recommend_status) {
+        this.recommend_status = recommend_status;
+    }
+
+    public String getNew_status() {
+        return new_status;
+    }
+
+    public void setNew_status(String new_status) {
+        this.new_status = new_status;
+    }
+
+    private String publish_status;
+    private String recommend_status;
+    private String new_status;
     private int sale;
     private int like_num;
     private String food_img;
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", publish_status=" + publish_status +
+                ", recommend_status=" + recommend_status +
+                ", new_status=" + new_status +
+                ", sale=" + sale +
+                ", like_num=" + like_num +
+                ", food_img='" + food_img + '\'' +
+                ", make_time='" + make_time + '\'' +
+                ", weight='" + weight + '\'' +
+                ", desc='" + desc + '\'' +
+                ", class_name='" + class_name + '\'' +
+                '}';
+    }
+
     private String make_time;
     private String weight;
     private String desc;
-    private String food_class;
+
+    public String getClass_name() {
+        return class_name;
+    }
+
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
+    }
+
+    private String class_name;
 
 }

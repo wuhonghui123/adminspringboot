@@ -13,13 +13,6 @@ public class Classification {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getIcon() {
         return icon;
@@ -29,7 +22,18 @@ public class Classification {
         this.icon = icon;
     }
 
+
+
     private String id;
-    private String name;
+
+    public String getClass_name() {
+        return class_name;
+    }
+
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
+    }
+
+    private String class_name;
     private String icon;
 }
