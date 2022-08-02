@@ -18,6 +18,7 @@
         <if test="create_time!=null">
             and create_time=#{create_time}
         </if>
+        order by id
     </select>
     <select id="selectOrder" resultType="cn.edu.guet.weappdemo.bean.Order">
         select * from order_a where user_id=#{value}
@@ -26,6 +27,6 @@
         insert into order_a values (#{id},'1', #{user_id},'1','1','1',now(),now(),'1','1','1','1',now(),'1','1','1','1')
     </insert>
     <delete id="deleteOrder">
-        delete from order_a where id=#{id} and pay_type=#{pay_type}
+        delete from order_a where id=#{id}
     </delete>
 </mapper>

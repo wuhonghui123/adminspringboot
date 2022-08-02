@@ -3,11 +3,13 @@ package cn.edu.guet.weappdemo.controller;
 import cn.edu.guet.weappdemo.bean.Order;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.OrderService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Author: wuhonghui
@@ -22,9 +24,10 @@ public class OrderController {
         System.out.println(orderService.getOrderList(id,user_id,order_type,pay_type,create_time));
         return HttpResult.ok(orderService.getOrderList(id,user_id,order_type,pay_type,create_time));
     }
-    @PostMapping("/order/delete")//删除订单
-    public HttpResult deleteOrder(String id,String pay_type){
-        return HttpResult.ok(orderService.deleteOrder(id, pay_type));
+    @GetMapping("/order/delete")//删除订单
+    public HttpResult deleteOrder(String id){
+        System.out.println(orderService.deleteOrder(id)+id);
+        return HttpResult.ok(orderService.getOrderList(null,null,null,null,null));
     }
 
     @PostMapping("/order/select")//查询订单

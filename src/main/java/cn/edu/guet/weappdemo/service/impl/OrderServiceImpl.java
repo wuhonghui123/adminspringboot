@@ -8,6 +8,7 @@ import cn.edu.guet.weappdemo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,8 +34,8 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public int deleteOrder(String id, String pay_type) {
-        return orderMapper.deleteOrder(id, pay_type);
+    public int deleteOrder(String id) {
+        return orderMapper.deleteOrder(id);
     }
 
     @Override
