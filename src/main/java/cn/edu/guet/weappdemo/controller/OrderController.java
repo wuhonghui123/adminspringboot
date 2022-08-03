@@ -47,4 +47,9 @@ public class OrderController {
     public HttpResult searchOder(@RequestParam("order_id") String order_id){
         return HttpResult.ok(orderService.searchOrder(order_id));
     }
+    @GetMapping("/order/user")
+    public HttpResult orderUserList(String order_id,String user_id){
+        System.out.println(user_id);
+        return HttpResult.ok(orderService.orderUserList(order_id,user_id));
+    }
 }

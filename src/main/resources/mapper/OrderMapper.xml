@@ -23,6 +23,11 @@
     <select id="selectOrder" resultType="cn.edu.guet.weappdemo.bean.Order">
         select * from order_a where user_id=#{value}
     </select>
+    <select id="orderUserList" resultType="cn.edu.guet.weappdemo.bean.OrderUser">
+        select o.id order_id,u.id user_id,u.nickName user_name,u.phone user_phone,a.address user_address
+        from order_a o,address a,user u
+        where o.id=#{order_id} and o.user_id=#{user_id} and o.user_id=u.id and u.id=a.user_id
+    </select>
     <insert id="addOrder">
         insert into order_a values (#{id},'1', #{user_id},'1','1','1',now(),now(),'1','1','1','1',now(),'1','1','1','1')
     </insert>

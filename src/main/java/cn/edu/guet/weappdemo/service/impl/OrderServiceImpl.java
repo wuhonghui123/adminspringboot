@@ -2,6 +2,7 @@ package cn.edu.guet.weappdemo.service.impl;
 
 import cn.edu.guet.weappdemo.bean.Order;
 import cn.edu.guet.weappdemo.bean.OrderFood;
+import cn.edu.guet.weappdemo.bean.OrderUser;
 import cn.edu.guet.weappdemo.mapper.OrderFoodMapper;
 import cn.edu.guet.weappdemo.mapper.OrderMapper;
 import cn.edu.guet.weappdemo.service.OrderService;
@@ -41,6 +42,11 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public List<OrderFood> searchOrder(String order_id) {
         return orderFoodMapper.searchOrder(order_id);
+    }
+
+    @Override
+    public List<OrderUser> orderUserList(String order_id,String user_id) {
+        return orderMapper.orderUserList(order_id, user_id);
     }
 
 

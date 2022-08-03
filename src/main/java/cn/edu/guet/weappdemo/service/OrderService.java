@@ -2,6 +2,7 @@ package cn.edu.guet.weappdemo.service;
 
 import cn.edu.guet.weappdemo.bean.Order;
 import cn.edu.guet.weappdemo.bean.OrderFood;
+import cn.edu.guet.weappdemo.bean.OrderUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
@@ -13,4 +14,5 @@ public interface OrderService {
     int addOrder(Order order);
     int deleteOrder(String id);
     List<OrderFood> searchOrder(String order_id);
+    List<OrderUser> orderUserList(String order_id,String user_id);
 }
