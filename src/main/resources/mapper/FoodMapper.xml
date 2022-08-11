@@ -11,7 +11,7 @@
         UPDATE food
         SET name= #{name},
             price = #{price},
-            'desc' = #{desc},
+            `desc` = #{desc},
             food_img=#{food_img},
             publish_status=#{publish_status},
             recommend_status=#{recommend_status},

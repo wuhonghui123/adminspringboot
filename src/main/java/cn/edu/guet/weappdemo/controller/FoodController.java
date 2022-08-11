@@ -50,6 +50,7 @@ public class FoodController {
 
     @PostMapping("/food/update_food")//更新食物信息
     public HttpResult updateFood(@RequestBody Food food){
+        System.out.println(food);
         return HttpResult.ok(foodService.updateFood(food));
     }
     @PostMapping("/food/add_food")//添加食物
@@ -59,6 +60,7 @@ public class FoodController {
     }
     @PostMapping("/food/delete_food")//删除食物
     public HttpResult deleteFood(@RequestBody Food food){
+        System.out.println(food);
         return HttpResult.ok(foodService.deleFood(food.getId()));
     }
 }
