@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface FoodService {
     List<Food> getFoodList();
+    List<Food> getFoodListtwo(String id);
     int addFood(Food food);
     int deleFood(String id);
     int updateFood(Food food);

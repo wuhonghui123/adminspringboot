@@ -26,6 +26,11 @@ public class FoodController {
     public HttpResult getFoodList(){
         return HttpResult.ok(foodService.getFoodList());
     }
+    @PostMapping("/food/listtwo")//获取食物列表two
+    public HttpResult getFoodListtwo(String id){
+        System.out.println(id);
+        return HttpResult.ok(foodService.getFoodListtwo(id));
+    }
     @GetMapping("/food/classification_list")//获取食物分类列表
     public HttpResult getClassificationList(){
         return HttpResult.ok(classService.getClassList());
@@ -43,16 +48,19 @@ public class FoodController {
         return HttpResult.ok(classService.deleFood(classification.getId()));
     }
 
-    @GetMapping("/food/update_food")//更新食物信息
+    @PostMapping("/food/update_food")//更新食物信息
     public HttpResult updateFood(@RequestBody Food food){
+        System.out.println(food);
         return HttpResult.ok(foodService.updateFood(food));
     }
-    @GetMapping("/food/add_food")//添加食物
+    @PostMapping("/food/add_food")//添加食物
     public HttpResult addFood(@RequestBody Food food){
+        System.out.println(food);
         return HttpResult.ok(foodService.addFood(food));
     }
-    @GetMapping("/food/delete_food")//删除食物
+    @PostMapping("/food/delete_food")//删除食物
     public HttpResult deleteFood(@RequestBody Food food){
+        System.out.println(food);
         return HttpResult.ok(foodService.deleFood(food.getId()));
     }
 }

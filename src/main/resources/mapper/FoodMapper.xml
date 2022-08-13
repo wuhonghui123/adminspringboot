@@ -2,18 +2,47 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.FoodMapper">
     <insert id="addFood" parameterType="cn.edu.guet.weappdemo.bean.Food">
-        INSERT INTO food (id, name, price, `desc`, food_img,weight, make_time,publish_status,recommend_status,new_status)
-        VALUES (#{id},#{name},#{price},#{desc},#{food_img},#{weight},#{make_time},#{publish_status},#{recommend_status},#{new_status});
+        INSERT INTO food (name, price, `desc`, food_img, weight, make_time, publish_status, recommend_status,
+                          new_status)
+        VALUES (#{name}, #{price}, #{desc}, #{food_img}, #{weight}, #{make_time}, #{publish_status},
+                #{recommend_status}, #{new_status});
     </insert>
     <update id="updateFood" parameterType="cn.edu.guet.weappdemo.bean.Food">
         UPDATE food
-        SET name= #{name},price = #{price},'desc' = #{desc},food_img=#{food_img},make_time = #{make_time},publish_status=#{publish_status},recommend_status=#{recommend_status},new_status=#{new_status}
+        SET name= #{name},
+            price = #{price},
+            `desc` = #{desc},
+            food_img=#{food_img},
+            publish_status=#{publish_status},
+            recommend_status=#{recommend_status},
+            new_status=#{new_status}
         WHERE id = #{id}
     </update>
     <delete id="deleFood">
-        DELETE FROM food WHERE id = #{value}
+        DELETE
+        FROM food
+        WHERE id = #{value}
     </delete>
     <select id="getFoodList" resultType="cn.edu.guet.weappdemo.bean.Food">
-        SELECT * FROM food
+        SELECT food.*, classification.class_name
+        FROM food,
+             classification,
+             food_class
+        WHERE food.id = food_class.food_id
+          AND food_class.classification_id = classification.id
+    </select>
+    <select id="getFoodID" resultType="java.lang.String">
+        SELECT id
+        from food
+        WHERE name = #{value}
+    </select>
+    <select id="getFoodListtwo" resultType="cn.edu.guet.weappdemo.bean.Food">
+        SELECT food.*, classification.class_name
+        FROM food,
+             classification,
+             food_class
+        WHERE food.id = food_class.food_id
+          AND food_class.classification_id = classification.id
+          AND classification_id = #{value}
     </select>
 </mapper>

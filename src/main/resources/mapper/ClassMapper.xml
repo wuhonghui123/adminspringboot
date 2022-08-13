@@ -2,18 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.ClassMapper">
     <insert id="addClass" parameterType="cn.edu.guet.weappdemo.bean.Classification">
-        INSERT INTO classification (id, name, icon)
+        INSERT INTO classification (id, class_name, icon)
         VALUES (#{id},#{name},#{icon});
     </insert>
     <update id="updateFood" parameterType="cn.edu.guet.weappdemo.bean.Classification">
         UPDATE classification
-        SET name= #{name},icon = #{icon}
+        SET class_name= #{name},icon = #{icon}
         WHERE id = #{id}
     </update>
     <delete id="deleFood">
         DELETE FROM classification WHERE id = #{value}
     </delete>
-    <select id="getClassList" resultType="cn.edu.guet.weappdemo.bean.Food">
+    <select id="getClassList" resultType="cn.edu.guet.weappdemo.bean.Classification">
         SELECT * FROM classification
+    </select>
+    <select id="getclassid" resultType="java.lang.String">
+        SELECT id from classification WHERE class_name = #{value}
     </select>
 </mapper>

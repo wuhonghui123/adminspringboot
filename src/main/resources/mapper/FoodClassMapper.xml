@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weappdemo.mapper.FoodClassMapper">
+    <insert id="addFoodClass">
+        INSERT INTO food_class (food_id, classification_id)
+        VALUES (#{foodid}, #{classid});
+    </insert>
+    <delete id="deleteFoodClass">
+        DELETE
+        FROM food_class
+        WHERE food_id = #{foodid}
+    </delete>
+</mapper>

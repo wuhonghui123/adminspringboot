@@ -19,7 +19,7 @@ public class ClassServiceImpl implements ClassService {
     private ClassMapper classMapper;
 
     @Override
-    public List<Food> getClassList() {
+    public List<Classification> getClassList() {
         return classMapper.getClassList();
     }
 

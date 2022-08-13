@@ -12,7 +12,9 @@ import java.util.List;
 @Mapper
 public interface FoodMapper {
     List<Food> getFoodList();
+    List<Food> getFoodListtwo(String id);
     int addFood(Food food);
     int deleFood(String id);
     int updateFood(Food food);
+    String getFoodID(String name);
 }

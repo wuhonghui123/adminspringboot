@@ -12,8 +12,9 @@ import java.util.List;
  */
 @Mapper
 public interface ClassMapper {
-    List<Food> getClassList();
+    List<Classification> getClassList();
     int addClass(Classification classification);
     int deleFood(String id);
     int updateFood(Classification classification);
+    String getclassid(String name);
 }
