@@ -4,9 +4,10 @@ import cn.edu.guet.weappdemo.bean.Commend;
 import cn.edu.guet.weappdemo.mapper.CommendMapper;
 import cn.edu.guet.weappdemo.service.CommendService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CommendServicelmpl implements CommendService {
     @Autowired
     private CommendMapper commendMapper;
