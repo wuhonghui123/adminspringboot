@@ -1,5 +1,7 @@
 package cn.edu.guet.weappdemo.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +20,7 @@ public class Order {
     private String consume_type;
     private String table;
     private int payment_status;
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private java.sql.Timestamp create_time;
 
     public String getId() {

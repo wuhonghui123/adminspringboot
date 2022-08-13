@@ -4,6 +4,9 @@ spring:
     url: jdbc:mysql://120.25.164.209:3306/xling?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: GMT+8
 
 
 server:
