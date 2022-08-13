@@ -28,6 +28,18 @@ public class SysUser extends BaseModel {
     private Long deptId;
 
     private Byte delFlag;
+
+	public SysUserRole getSysUserRole() {
+		return sysUserRole;
+	}
+
+	public void setSysUserRole(SysUserRole sysUserRole) {
+		this.sysUserRole = sysUserRole;
+	}
+
+	private SysUserRole sysUserRole;
+
+	private SysRole sysRole;
     
     // 非数据库字段
     private String deptName;

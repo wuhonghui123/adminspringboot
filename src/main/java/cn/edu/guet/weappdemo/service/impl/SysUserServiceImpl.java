@@ -50,6 +50,7 @@ public class SysUserServiceImpl implements SysUserService {
         for (Iterator<SysUserRole> iter = userRoles.iterator(); iter.hasNext(); ) {
             SysUserRole userRole = iter.next();
             SysRole sysRole = sysRoleMapper.selectByPrimaryKey(userRole.getRoleId());
+//            SysRole sysRole = sysRoleMapper.selectByPrimaryKey(userRole.getRole_id());
             if (sysRole == null) {
                 continue;
             }
@@ -66,6 +67,37 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserRoleMapper.findUserRoles(userId);
     }
 
+    //查询用户信息
+    @Override
+    public List<SysUser> findAllUser() {
+        return sysUserMapper.findAllUser();
+    }
+
+
+
+    //修改用户信息
+//    @Override
+//    public int updateUser(SysUser sysUser) {
+//        return sysUserMapper.updateUser(sysUser);
+//    }
+    @Override
+    public int updateUser(String id) {
+        return sysUserMapper.updateUser(id);
+    }
+
+    //添加用户
+    @Override
+    public int insertUser(SysUser sysUser) {
+
+        return sysUserMapper.insertUser(sysUser);
+    }
+
+    //删除用户
+    @Override
+    public int deleteUser(String id) {
+        return sysUserMapper.deleteUser(id);
+    }
+
     @Override
     public Set<String> findPermissions(String userName) {
         Set<String> perms = new HashSet<>();
@@ -78,3 +110,6 @@ public class SysUserServiceImpl implements SysUserService {
         return perms;
     }
 }
+
+
+

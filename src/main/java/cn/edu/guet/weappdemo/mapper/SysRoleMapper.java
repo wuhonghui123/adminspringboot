@@ -3,6 +3,7 @@ package cn.edu.guet.weappdemo.mapper;
 import java.util.List;
 
 import cn.edu.guet.weappdemo.bean.SysRole;
+import cn.edu.guet.weappdemo.bean.SysUserRole;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -13,4 +14,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface SysRoleMapper {
     SysRole selectByPrimaryKey(Long id);
     List<SysRole> findAll();
+
+
 }

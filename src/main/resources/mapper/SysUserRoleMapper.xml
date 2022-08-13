@@ -19,4 +19,13 @@
         from sys_user_role
         where user_id = #{userId,jdbcType=BIGINT}
     </select>
+
+    <insert id="insertRole" parameterType="cn.edu.guet.weappdemo.bean.SysUserRole">
+        insert into sys_user_role (id,user_id,role_id)
+        VALUES (#{id},#{userId},#{roleId});
+    </insert>
+
+    <update id="updateRole" parameterType="cn.edu.guet.weappdemo.bean.SysUserRole">
+        update sys_user_role set role_id=#{roleId} where id=#{id};
+    </update>
 </mapper>

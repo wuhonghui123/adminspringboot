@@ -1,5 +1,7 @@
 package cn.edu.guet.weappdemo.controller;
 
+import cn.edu.guet.weappdemo.bean.SysRole;
+import cn.edu.guet.weappdemo.bean.SysUserRole;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +33,6 @@ public class SysRoleController {
     public HttpResult findAll() {
         return HttpResult.ok(sysRoleService.findAll());
     }
+
+
 }

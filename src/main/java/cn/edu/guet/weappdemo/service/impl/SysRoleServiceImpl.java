@@ -3,6 +3,7 @@ package cn.edu.guet.weappdemo.service.impl;
 import java.util.List;
 
 import cn.edu.guet.weappdemo.bean.SysRole;
+import cn.edu.guet.weappdemo.bean.SysUserRole;
 import cn.edu.guet.weappdemo.mapper.SysRoleMapper;
 import cn.edu.guet.weappdemo.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,7 @@ public class SysRoleServiceImpl  implements SysRoleService {
 	public List<SysRole> findAll() {
 		return sysRoleMapper.findAll();
 	}
-	
+
+
+
 }

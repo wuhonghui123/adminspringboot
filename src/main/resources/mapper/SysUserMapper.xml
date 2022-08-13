@@ -17,10 +17,54 @@
         <result column="last_update_by" jdbcType="VARCHAR" property="lastUpdateBy"/>
         <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime"/>
         <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+
+        <collection property="sysUserRole" javaType="cn.edu.guet.weappdemo.bean.SysUserRole">
+            <id column="id" jdbcType="BIGINT" property="id"/>
+            <id column="user_id" jdbcType="BIGINT" property="userId"></id>
+            <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+            <collection property="sysRole" javaType="cn.edu.guet.weappdemo.bean.SysRole">
+                <id column="id" jdbcType="BIGINT" property="id"/>
+                <result column="name" jdbcType="VARCHAR" property="name"/>
+                <result column="del_flag" jdbcType="VARCHAR" property="delFlag"/>
+                <result column="remark" jdbcType="VARCHAR" property="remark"/>
+            </collection>
+        </collection>
     </resultMap>
+
+
+
+
+
     <select id="findByName" parameterType="java.lang.String" resultMap="BaseResultMap">
         select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName
         from sys_user u
         where u.name = #{name,jdbcType=VARCHAR}
     </select>
+
+    <select id="findAllUser" parameterType="java.lang.String"  resultMap="BaseResultMap">
+        SELECT u.*,sr.*,sur.*
+        from sys_user u,sys_user_role sur,sys_role sr
+        where u.id=sur.user_id and sr.id=sur.role_id;
+    </select>
+
+    <insert id="insertUser" parameterType="cn.edu.guet.weappdemo.bean.SysUser">
+        insert into sys_user (name,nick_name,password,email,mobile)
+        VALUES (#{name},#{nickName},#{password},#{email},#{mobile});
+    </insert>
+
+    <update id="updateUser">
+        update sys_user
+        set password=#{password}
+        where id=#{id}
+    </update>
+
+<!--    <update id="updateUser">-->
+<!--        update sys_user-->
+<!--        set name=#{name},nick_name=#{nickName},password=#{password},email=#{email},mobile=#{mobile},-->
+<!--            where id=#{id}-->
+<!--    </update>-->
+
+    <delete id="deleteUser">
+        DELETE FROM sys_user WHERE id = #{value}
+    </delete>
 </mapper>

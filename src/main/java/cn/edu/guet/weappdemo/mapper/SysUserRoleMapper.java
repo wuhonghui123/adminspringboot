@@ -13,4 +13,6 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface SysUserRoleMapper {
     List<SysUserRole> findUserRoles(@Param(value = "userId") Long userId);
+    int insertRole(SysUserRole sysUserRole);
+    int updateRole(String id);
 }

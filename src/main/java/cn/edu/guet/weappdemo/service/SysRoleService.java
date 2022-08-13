@@ -1,6 +1,7 @@
 package cn.edu.guet.weappdemo.service;
 
 import cn.edu.guet.weappdemo.bean.SysRole;
+import cn.edu.guet.weappdemo.bean.SysUserRole;
 
 import java.util.List;
 
@@ -19,5 +20,7 @@ public interface SysRoleService {
      * @return
      */
     List<SysRole> findAll();
+
+
 
 }
