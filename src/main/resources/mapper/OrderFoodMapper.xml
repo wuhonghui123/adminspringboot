@@ -3,6 +3,6 @@
 <mapper namespace="cn.edu.guet.weappdemo.mapper.OrderFoodMapper">
 
     <select id="searchOrder" resultType="cn.edu.guet.weappdemo.bean.OrderFood">
-        select * from order_food where order_id=#{value}
+        select o.*,f.food_img from (select * from order_food where order_id=#{order_id}) o,food f where o.food_id=f.id
     </select>
 </mapper>

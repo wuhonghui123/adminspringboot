@@ -1,5 +1,6 @@
 package cn.edu.guet.weappdemo.service;
 
+import cn.edu.guet.weappdemo.bean.Address;
 import cn.edu.guet.weappdemo.bean.Order;
 import cn.edu.guet.weappdemo.bean.OrderFood;
 import org.apache.ibatis.annotations.Param;
@@ -12,4 +13,5 @@ public interface OrderService {
     int addOrder(Order order);
     int deleteOrder(String id,String pay_type);
     List<OrderFood> searchOrder(String order_id);
+    List<Address> getOrderUser(String order_id,String user_id);
 }
