@@ -4,6 +4,7 @@ import cn.edu.guet.weappdemo.bean.Commend;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.CommendService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,11 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2022/07/26/9:36
  */
 //商家追加评论
+@RestController
 public class CommendController {
 
     @Autowired
     private CommendService commendService;
-    @PostMapping("/commend/list")//获取评论列表
+    @GetMapping("/commend/list")//获取评论列表
     public HttpResult getCommend(){
         return HttpResult.ok(commendService.getCommend());
     }
@@ -31,10 +33,5 @@ public class CommendController {
     public HttpResult updateCommend(@RequestBody Commend commend){
 
         return HttpResult.ok(commendService.updateCommend(commend));
-    }
-    @PostMapping("/commend/delete")//删除评论
-    public HttpResult deleteCommend(@RequestBody Commend commend){
-
-        return HttpResult.ok(commendService.deleteCommend(commend.getId()));
     }
 }

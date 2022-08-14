@@ -2,7 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.CommendMapper">
     <insert id="addCommend"></insert>
-    <update id="updateCommend"></update>
+    <update id="updateCommend" parameterType="cn.edu.guet.weappdemo.bean.Commend">
+        UPDATE commend
+        SET StoreReply=#{storeReply},
+            storeReply_time = now()
+        WHERE commend_id = #{commend_id}
+    </update>
     <delete id="deleteCommend"></delete>
-    <select id="getCommend" resultType="cn.edu.guet.weappdemo.bean.Commend"></select>
+    <select id="getCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
+        SELECT commend.*,user.nickName FROM commend,user WHERE commend.user_id = user.id
+    </select>
 </mapper>
