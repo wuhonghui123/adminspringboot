@@ -1,5 +1,6 @@
 package cn.edu.guet.weappdemo.mapper;
 
+import cn.edu.guet.weappdemo.bean.Address;
 import cn.edu.guet.weappdemo.bean.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -16,4 +17,5 @@ public interface OrderMapper {
     List<Order> selectOrder(String user_id);
     int addOrder(Order order);
     int deleteOrder(String id,String pay_type);
+    List<Address> getOrderUser(@Param("id") String id, @Param("user_id") String user_id);
 }

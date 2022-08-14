@@ -1,5 +1,6 @@
 package cn.edu.guet.weappdemo.service.impl;
 
+import cn.edu.guet.weappdemo.bean.Address;
 import cn.edu.guet.weappdemo.bean.Order;
 import cn.edu.guet.weappdemo.bean.OrderFood;
 import cn.edu.guet.weappdemo.mapper.OrderFoodMapper;
@@ -40,6 +41,11 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public List<OrderFood> searchOrder(String order_id) {
         return orderFoodMapper.searchOrder(order_id);
+    }
+
+    @Override
+    public List<Address> getOrderUser(String order_id, String user_id) {
+        return orderMapper.getOrderUser(order_id, user_id);
     }
 
 

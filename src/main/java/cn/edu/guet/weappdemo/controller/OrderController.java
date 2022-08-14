@@ -36,12 +36,19 @@ public class OrderController {
     public HttpResult updateOrderType(){
         return HttpResult.ok();
     }
+
     @PostMapping("/order/addorder")//生成订单
     public HttpResult addOrder(Order order){
         return HttpResult.ok(orderService.addOrder(order));
     }
+
     @GetMapping("/order/search")
     public HttpResult searchOder(@RequestParam("order_id") String order_id){
         return HttpResult.ok(orderService.searchOrder(order_id));
+    }
+    @GetMapping("/order/user")
+    public HttpResult getOrderUser(String order_id,String user_id){
+        System.out.println(order_id +"#######"+ user_id);
+        return HttpResult.ok(orderService.getOrderUser(order_id,user_id));
     }
 }
